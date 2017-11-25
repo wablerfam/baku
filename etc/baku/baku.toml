@@ -1,0 +1,19 @@
+[server]
+port = 8900
+
+[database]
+path = "./data/baku.db"
+
+[job]
+name = "example"
+description = "example job"
+
+[[job.group]]
+name = "hello"
+description = "hello everything"
+
+[[job.group.task]]
+name = "morning"
+description = "hello morning world"
+timing = "0 */1 * * * *"
+command = "echo 'hello'"
