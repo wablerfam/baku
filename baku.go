@@ -8,10 +8,14 @@ func main() {
 	Logger("info", "baku.main", "baku start")
 
 	var (
-		parseFile = flag.String("c", "etc/baku/baku.toml", "specify config file")
+		parseFile = flag.String("c", "default", "specify config file")
 	)
 
 	flag.Parse()
+
+	if *parseFile == "default" {
+		Logger("fatal", "baku.main", "not set -c [config_file]")
+	}
 
 	conf := LoadConfig(*parseFile)
 
