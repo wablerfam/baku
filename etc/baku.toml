@@ -1,0 +1,35 @@
+[server]
+port = 8900
+
+[database]
+path = "./data/baku.db"
+
+[job]
+name = "greet"
+description = "greet aroud the world"
+
+[[job.group]]
+name = "hello"
+description = "greet type hello"
+
+[[job.group.task]]
+name = "bear"
+description = "greet hello bear"
+timing = "0 0 7 * * *"
+command = "echo 'hello bear'"
+
+[[job.group.task]]
+name = "bird"
+description = "greet hello bird"
+timing = "0 0 7 * * *"
+command = "echo 'hello bird'"
+
+[[job.group]]
+name = "goodbye"
+description = "greet type goodbye"
+
+[[job.group.task]]
+name = "bear"
+description = "greet hello bear"
+timing = "0 0 21 * * *"
+command = "echo 'hello bear'"
