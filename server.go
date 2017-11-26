@@ -21,7 +21,9 @@ func InitServer(config ServerConfig) *Server {
 }
 
 func (srv Server) Run(job JobConfig, database Database) {
-	Logger("info", "baku.server", "baku server up")
+	msg := "up "
+	msg += strconv.Itoa(srv.Port)
+	Logger("info", "baku.server", msg)
 
 	handler := Handler{job, database}
 	handler.Use(srv.Router)

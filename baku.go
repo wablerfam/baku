@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	Logger("info", "baku.main", "baku start")
+	Logger("info", "baku.main", "start")
 
 	var (
 		parseFile = flag.String("c", "default", "specify config file")
@@ -23,7 +23,7 @@ func main() {
 	database.Setup(conf.Job.Group)
 
 	scheduler := InitScheduler()
-	scheduler.Run(conf.Job.Group, database)
+	scheduler.Run(conf.Job, database)
 
 	server := InitServer(conf.Server)
 	server.Run(conf.Job, database)

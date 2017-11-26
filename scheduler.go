@@ -16,10 +16,12 @@ func InitScheduler() *Scheduler {
 	return s
 }
 
-func (sch Scheduler) Run(groups []JobGroupConfig, database Database) {
-	Logger("info", "baku.scheduler", "baku schduler up")
+func (sch Scheduler) Run(job JobConfig, database Database) {
+	msg := "set "
+	msg += job.Name
+	Logger("info", "baku.scheduler", msg)
 
-	for _, group := range groups {
+	for _, group := range job.Group {
 		for _, task := range group.Task {
 			tagName := strings.Join([]string{group.Name, task.Name}, ".")
 

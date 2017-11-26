@@ -52,7 +52,7 @@ func OverlapCheck(namelist []string) {
 	}
 
 	if len(namelist) != len(uniq) {
-		msg := "job config is overlap"
+		msg := "name can not use overlap"
 		Logger("fatal", "baku.config", msg)
 	}
 }
@@ -60,7 +60,7 @@ func OverlapCheck(namelist []string) {
 func SpaceCheck(name string) {
 	check := strings.Contains(name, " ")
 	if check == true {
-		msg := "can not use spaces in job config name"
+		msg := "name can not use spaces"
 		Logger("fatal", "baku.config", msg)
 	}
 }
@@ -69,7 +69,7 @@ func UpperCheck(name string) {
 	for _, oneletter := range name {
 		check := unicode.IsLower(oneletter)
 		if check == false {
-			msg := "uppercase letters can not be used"
+			msg := "name can not use upper"
 			Logger("fatal", "baku.config", msg)
 		}
 	}
@@ -82,6 +82,10 @@ func LoadConfig(configFile string) Config {
 		Logger("fatal", "baku.config", err.Error())
 	}
 
+	msg := "load "
+	msg += configFile
+	Logger("info", "baku.config", msg)
+	
 	jobGroup := []string{}
 	groupTask := []string{}
 	for _, group := range config.Job.Group {
