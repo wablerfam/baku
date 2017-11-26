@@ -82,7 +82,7 @@ func LoadConfig(configFile string) Config {
 		Logger("fatal", "baku.config", err.Error())
 	}
 
-	msg := "load "
+	msg := "load config "
 	msg += configFile
 	Logger("info", "baku.config", msg)
 	

@@ -17,7 +17,7 @@ func InitScheduler() *Scheduler {
 }
 
 func (sch Scheduler) Run(job JobConfig, database Database) {
-	msg := "set "
+	msg := "set job "
 	msg += job.Name
 	Logger("info", "baku.scheduler", msg)
 
