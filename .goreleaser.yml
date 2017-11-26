@@ -2,6 +2,7 @@
 # Build customization
 builds:
   - binary: baku
+    ldflags: -s -w -X main.version={{.Version}}
     goos:
       - linux
     goarch:
