@@ -7,7 +7,7 @@ import (
 
 var version string
 
-func chechVerrsion() {
+func chechVersion() {
 	fmt.Println(version)	
 }
 
@@ -20,7 +20,7 @@ func main() {
 	flag.Parse()
 
 	if *parseVersion == true {
-		chechVerrsion()
+		chechVersion()
 		return
 	}
 
