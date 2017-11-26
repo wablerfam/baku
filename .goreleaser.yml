@@ -1,8 +1,7 @@
 # .goreleaser.yml
 # Build customization
 builds:
-  - main: baku.go
-    binary: baku
+  - binary: baku
     goos:
       - linux
     goarch:
