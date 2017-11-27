@@ -1,7 +1,7 @@
 # baku
 baku is file base api cron scheduler
 
-[baku](https://github.com/wablerfam/baku/blob/master/image/baku.png)
+![baku](https://github.com/wablerfam/baku/blob/master/image/baku.png "baku")
 
 ## Download & Install
 Download from github release
